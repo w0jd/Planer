@@ -21,11 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.compose.rememberNavController
-import com.example.model.UserModel
 import com.example.view.shared.menu
-import com.example.viewmodel.ActivitesViewModel
-import com.example.viewmodel.MainViewModel
+import com.example.viewmodel.TarvelViewModel
+
 class dayView: AppCompatActivity()  {
 
 //    private val  userViewModel: MainViewModel by viewModels()
@@ -37,19 +35,19 @@ class dayView: AppCompatActivity()  {
 
                 var menu= menu()
 //                menu.DetailedDrawerExample() {
-                    UserDailyActivityScreen(ActivitesViewModel())
+                    TravelsScreen(TarvelViewModel())
 
 //                }
             }
         }
 
     @Composable
-    fun UserDailyActivityScreen(viewModel: ActivitesViewModel= viewModel()   ) {
+    fun TravelsScreen(viewModel: TarvelViewModel= viewModel()   ) {
         var selectedDate by remember { mutableStateOf("") }
 
         var age by remember { mutableStateOf("") }
-        val activitesList  by viewModel.activiesList.collectAsStateWithLifecycle()
-
+        val travelsList  by viewModel.travelsList.collectAsStateWithLifecycle()
+        var trav=arrayOf(travelsList,"------")
         Column(modifier = Modifier.padding(16.dp)) {
             OutlinedTextField(
                 value = selectedDate,
@@ -60,12 +58,18 @@ class dayView: AppCompatActivity()  {
             Spacer(modifier = Modifier.height(8.dp))
 
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { viewModel.showDailyActivities(selectedDate) }) {
+            Button(onClick = { viewModel.showAllTravels(selectedDate) }) {
                 Text("Submit")
             }
             Button(onClick = {}){ Text("test") }
             Spacer(modifier = Modifier.height(16.dp))
-            Text(activitesList)
+//            Text(travelsList)
+            Column{
+                trav.forEach {
+                  travel -> Text(travel)
+              }
+
+            }
 //            rememberDrawerState(DrawerValue.Open)
 
 //

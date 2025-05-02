@@ -14,7 +14,7 @@ import com.example.view.shared.menu
 import com.example.viewmodel.MainViewModel
 import kotlinx.serialization.Serializable
 import com.example.view.dayView
-import com.example.viewmodel.ActivitesViewModel
+import com.example.viewmodel.TarvelViewModel
 
 class MainActivity : AppCompatActivity() {
 //    private val  userViewModel: MainViewModel by viewModels()
@@ -43,7 +43,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
                     composable<DailyActivities>{
                         val dayView= dayView()
                         menu.DetailedDrawerExample(navController) { paddingValues ->
-                        dayView.UserDailyActivityScreen(ActivitesViewModel())
+                        dayView.TravelsScreen(TarvelViewModel())
                         }
                     }
                 }

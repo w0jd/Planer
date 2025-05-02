@@ -19,29 +19,11 @@ import kotlinx.coroutines.flow.StateFlow
 //import androidx.lifecycle.viewmodel.compose.viewModel.uiState
 import androidx.lifecycle.viewmodel.compose.viewModel
 open class MainView : AppCompatActivity() {
-
-//   private val  userViewModel: MainViewModel by viewModels()
-//    @Composable
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContent{
-//            UserInputScreen(userViewModel)
-//        }
-//    }
-////        val userRepository = UserRepository()
-
-
-
-
-
     @Composable
     fun UserInputScreen(viewModel: MainViewModel= viewModel()   ) {
         var name by remember { mutableStateOf("") }
-
         var age by remember { mutableStateOf("") }
         val greeting  by viewModel.greeting.collectAsStateWithLifecycle()
-
         Column(modifier = Modifier.padding(16.dp)) {
             OutlinedTextField(
                 value = name,
