@@ -8,15 +8,17 @@ plugins {
     id("app.cash.sqldelight") version "2.0.2"
 }
 
-
-android {
-    sqldelight {
-        databases {
-            create("Database") {
-                packageName.set("com.example")
-            }
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.example")
+            srcDirs.setFrom("src/main/sqldelight")
+            schemaOutputDirectory.set(file("src/main/sqldelight/databases"))
         }
     }
+}
+android {
+
     namespace = "com.example.planer"
     compileSdk = 36
     buildFeatures {
