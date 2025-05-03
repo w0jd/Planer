@@ -61,10 +61,11 @@ class dayView: AppCompatActivity()  {
             Button(onClick = { viewModel.showAllTravels(selectedDate) }) {
                 Text("Submit")
             }
-            Button(onClick = {}){ Text("test") }
             Spacer(modifier = Modifier.height(16.dp))
 //            Text(travelsList)
+
             Column{
+
                 trav.forEach {
                   travel -> Text(travel)
               }

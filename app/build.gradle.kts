@@ -5,10 +5,18 @@ plugins {
 //    alias(libs.plugins.compose.compiler)
 //    id("org.jetbrains.kotlin.plugin.compose") version "2.0.21"
     kotlin("plugin.serialization") version "2.0.21"
-
+    id("app.cash.sqldelight") version "2.0.2"
 }
 
+
 android {
+    sqldelight {
+        databases {
+            create("Database") {
+                packageName.set("com.example")
+            }
+        }
+    }
     namespace = "com.example.planer"
     compileSdk = 36
     buildFeatures {
@@ -59,6 +67,8 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2025.02.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
+    implementation("app.cash.sqldelight:android-driver:2.0.2")
+
 //    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
 
 //    implementation (libs.androidx.lifecycle.viewmodel.compose.v262)
