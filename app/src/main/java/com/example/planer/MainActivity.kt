@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Database
+import androidx.sqlite.db.SupportSQLiteDatabase
+import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.example.model.UserModel
 import com.example.view.MainView
 import com.example.view.shared.menu

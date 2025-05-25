@@ -10,13 +10,14 @@ plugins {
 
 sqldelight {
     databases {
-        create("Database") {
+        create("Planer") {
             packageName.set("com.example")
             srcDirs.setFrom("src/main/sqldelight")
             schemaOutputDirectory.set(file("src/main/sqldelight/databases"))
         }
     }
 }
+
 android {
 
     namespace = "com.example.planer"
@@ -63,6 +64,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.room.common.jvm)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,6 +72,7 @@ dependencies {
     implementation(composeBom)
     androidTestImplementation(composeBom)
     implementation("app.cash.sqldelight:android-driver:2.0.2")
+//    implementation ("com.squareup.sqldelight:coroutines-extensions:2.0.0")
 
 //    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
 

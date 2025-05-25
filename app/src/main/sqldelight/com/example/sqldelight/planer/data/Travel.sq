@@ -1,0 +1,8 @@
+CREATE TABLE Trip(
+ TripId INTEGER PRIMARY KEY NOT NULL,
+ Budget REAL,
+ StartingDate TEXT,
+ EndingDate Text,
+ Description Text,
+ name Text
+);
