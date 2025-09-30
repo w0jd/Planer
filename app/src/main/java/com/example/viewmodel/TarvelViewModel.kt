@@ -10,7 +10,7 @@ class TarvelViewModel:ViewModel() {
 
     fun showAllTravels(choosenTravel: String){
 //        zapytanie do bazy danych o podróże
-        _travelsList.value="to będzie lista"
+        _travelsList.value="to będzie lista "+choosenTravel.toString()
 
     }
 }

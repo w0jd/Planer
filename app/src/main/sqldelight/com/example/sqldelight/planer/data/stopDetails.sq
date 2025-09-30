@@ -1,0 +1,13 @@
+CREATE TABLE stopDetails (
+ stopDetailsID INTEGER NOT NULL PRIMARY KEY,
+  stopName TEXT,
+  description TEXT,
+  number INTEGER,
+  spendings REAL,
+  stopNumber INTEGER,
+  budget REAL,
+  data TEXT,
+  StopID INTEGER,
+ FOREIGN KEY (stopDetailsID) REFERENCES Stop(StopID) ON DELETE CASCADE
+
+);

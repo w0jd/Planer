@@ -1,0 +1,11 @@
+CREATE TABLE Stop (
+ StopID INTEGER PRIMARY KEY NOT NULL,
+ arrivalDate TEXT,
+ desctiption TEXT,
+ departureDate TEXT,
+ budget REAL,
+ StopName TEXT,
+ spendings REAL,
+ TripId INTEGER,
+ FOREIGN KEY (TripId) REFERENCES Trip(TripId) ON DELETE CASCADE
+);
